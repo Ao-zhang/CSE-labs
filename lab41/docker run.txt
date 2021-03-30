@@ -1,0 +1,19 @@
+ics@麦当:/mnt/c/Users/asus$ docker ps -a                                                                                
+CONTAINER ID        IMAGE                         COMMAND             CREATED             STATUS                    PORTS               NAMES                                                                                                   
+df1c74cb8557        ddnirvana/cselab_env:latest   "/bin/bash"         12 hours ago        Up 10 minutes                                 focused_napier                                                                                          
+17123cd466b5        hello-world                   "/hello"            12 hours ago        Exited (0) 12 hours ago                       eloquent_swanson                                                                                        
+ics@麦当:/mnt/c/Users/asus$ docker inspect -f '{{.ID}}' focused_napier                                                  
+df1c74cb8557e18d280eefd6c5799f3931a9ff5e80a5855416ce055e21a19f59                                                        
+ics@麦当:/mnt/c/Users/asus$ docker cp /mnt/d/WSL\ debian\ files/CSE/lab-cse df1c74cb8557e18d280eefd6c5799f3931a9ff5e80a5855416ce055e21a19f59:/home/stu/devlop                                                                                  
+
+C:\Users\asus>docker cp D:/WSL_debian_files/CSE/lab-cse df1c74cb8557e18d280eefd6c5799f3931a9ff5e80a5855416ce055e21a19f59:/home/stu/devlop 
+
+ics@麦当:/mnt/c/Users/asus$ docker exec -it focused_napier bash   
+
+sudo docker run -it --privileged --cap-add=ALL -v D:\WSL_debian_files\CSE\lab-cse:/home/stu/devlop ddnirvana/cselab_env:latest /bin/bash
+
+ics@麦当:/mnt/c/Users/asus$ sudo docker info | grep "Docker Root Dir"                                                   
+[sudo] password for ics:                                                                                                
+WARNING: bridge-nf-call-iptables is disabled                                                                            
+WARNING: bridge-nf-call-ip6tables is disabled                                                                            
+Docker Root Dir: /var/lib/docker

@@ -1,0 +1,3 @@
+lab1：
+	# ncpu secs works works/sec
+	    1 12.397414 384.000000 30.974202
